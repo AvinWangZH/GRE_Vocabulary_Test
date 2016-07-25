@@ -109,7 +109,7 @@ def single_word_list_test():
     while transition != '':
         transition = input('\nEnter return to continue to learn unknown words')     
            
-    print("The words you don't know are:")
+    print("\nThe words you don't know are:")
     for i in word_dict:
         if word_dict[i]['do_not_know_new'] != 0:
             print(i)  
@@ -136,7 +136,13 @@ def single_word_list_test():
         check_hist = input('\nDo you want to check the history? (y/n): ')
     
     if check_hist == 'y':
-        print('\nUnsure words ->')
+        
+        print('\nUnsure list:')
+        for i in word_dict:
+            if word_dict[i]['unsure_past'] != 0:
+                print(i, word_dict[i]['unsure_past'])
+        
+        print('\nUnsure words check->')
         for i in word_dict:
             if word_dict[i]['unsure_past'] != 0:
                 print(i, word_dict[i]['unsure_past'])
@@ -146,6 +152,11 @@ def single_word_list_test():
                     print(i)
                     check_meaning = i
                     check_word_meaning(check_meaning)
+                    
+        print('\nUnknown list:')
+        for i in word_dict:
+            if word_dict[i]['do_not_know_past'] != 0:
+                print(i, word_dict[i]['do_not_know_past'])        
                 
         print('\nUnknown words ->')
         for i in word_dict:
@@ -178,12 +189,6 @@ def single_word_list_test():
 
     return
         
-    
-    
-    
-    
-    
-    
     
     
 def unsure_past_test():
@@ -229,7 +234,7 @@ if __name__ == '__main__':
     #initiallize_word_list()
     single_word_list_test()
     
-    #with open('list_7.json', 'r') as f:
+    #with open('list_10.json', 'r') as f:
         #a = json.load(f)
     
     
