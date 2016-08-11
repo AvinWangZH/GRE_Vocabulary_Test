@@ -1,3 +1,10 @@
+'''
+Functions should be added:
+1. statistical analysis
+2. mixation testing system
+'''
+
+
 import json
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
